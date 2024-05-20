@@ -24,6 +24,14 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Private\\Character\\AuraCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Private\\Character\\AuraCharacterBase.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
@@ -32,7 +40,47 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Private\\Character\\AuraEnemy.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Private\\Player\\AuraController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Public\\Character\\AuraCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Public\\Character\\AuraCharacterBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Public\\Character\\AuraEnemy.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\Source\\Aura\\Public\\Player\\AuraController.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
 			"@C:\\Users\\alexs\\OneDrive\\Documents\\Unreal Projects\\Aura\\.vscode\\compileCommands_Default\\Aura.1.rsp"
