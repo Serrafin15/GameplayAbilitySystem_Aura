@@ -5,11 +5,84 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputAction.h"
 #include "EnhancedInputComponent.h"
+#include "UObject/ScriptInterface.h"
 
 
 AAuraController::AAuraController()
 {
+    
     bReplicates = true;
+}
+
+void AAuraController::PlayerTick(float DeltaTime)
+{
+    Super::PlayerTick(DeltaTime);
+
+    CursorTrace();
+}
+
+void AAuraController::CursorTrace()
+{
+    FHitResult CursorHit;
+    GetHitResultUnderCursor(ECC_Visibility, false, CursorHit); 
+    if (!CursorHit.bBlockingHit) return; // If its not hitting anything then exit.
+
+    LastActor = ThisActor; // What the actor was last frame
+    ThisActor = CursorHit.GetActor(); // TScriptInterface allows us to store actor from FHitResult without casting.
+
+    /** 
+     * Line Trace from cursor. There are several scenarios
+     * A. LastActor == null && ThisActor == null
+     *     -Do Nothing
+     * B.LastActor == null && ThisActor is valid
+     *      -Highlight ThisAcor
+     * C. LastActor == valid && ThisActor is null
+     *      -UnHighlight LastActor
+     * D. Both valid. but LastActor != ThisActor
+     *      -UnHighlight LastActor and Highlight ThisActor
+     * E. Both actors are valid, and are the same actor
+     *      -Do nothing
+    */
+
+   if(LastActor == nullptr)
+   {
+    
+        if(ThisActor != nullptr)
+        {
+            //Case B:
+            ThisActor->HighlightActor();
+        }
+        else
+        {
+            //Case A: Both are null, do nothing
+        }
+
+   }
+   else
+   {
+        //LastActor is valid
+        if(ThisActor == nullptr)
+        {
+            //Case C:
+            LastActor->UnHighlightActor();
+        }
+        else
+        {
+            //Both actors are valid
+            if(LastActor != ThisActor)
+            {
+                //Case D
+                LastActor->UnHighlightActor();
+                ThisActor->HighlightActor();
+            }
+            else
+            {
+                // Case E: Do Nothing
+            }   
+        }
+   }
+    
+
 }
 
 void AAuraController::BeginPlay()
@@ -60,3 +133,5 @@ void AAuraController::Move(const FInputActionValue &Value)
 
 
 }
+
+

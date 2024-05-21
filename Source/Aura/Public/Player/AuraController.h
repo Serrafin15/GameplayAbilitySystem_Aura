@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Interaction\EnemyInterface.h"
 #include "AuraController.generated.h"
 
 //Enhanced Input
@@ -18,10 +19,10 @@ class AURA_API AAuraController : public APlayerController
 	
 public:
 	AAuraController();
+	virtual void PlayerTick(float DeltaTime) override;
 
 protected:
 	virtual void BeginPlay() override;
-
 	virtual void SetupInputComponent() override;
 
 private:
@@ -33,4 +34,8 @@ private:
 	
 	void Move(const FInputActionValue &Value);
 	
+	void CursorTrace();
+
+	TScriptInterface<IEnemyInterface> ThisActor; // TScriptInterface is the correct way to hold interface pointers
+	TScriptInterface<IEnemyInterface> LastActor;
 };
