@@ -23,8 +23,8 @@ void AAuraController::PlayerTick(float DeltaTime)
 
 void AAuraController::CursorTrace()
 {
-    FHitResult CursorHit;
-    GetHitResultUnderCursor(ECC_Visibility, false, CursorHit); 
+    FHitResult CursorHit; 
+    GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);  // Visibility collision channel, make sure enemy blueprints block the visibility channel on mesh
     if (!CursorHit.bBlockingHit) return; // If its not hitting anything then exit.
 
     LastActor = ThisActor; // What the actor was last frame
