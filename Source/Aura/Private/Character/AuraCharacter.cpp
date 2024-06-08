@@ -1,8 +1,9 @@
 // Copyright Alex Dominguez
 
-
 #include "Character/AuraCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "Player/AuraPlayerState.h"
 
 AAuraCharacter::AAuraCharacter()
 {
@@ -14,4 +15,35 @@ AAuraCharacter::AAuraCharacter()
     bUseControllerRotationPitch = false; // We don't want to use the controller's rotation 
     bUseControllerRotationRoll = false; // Controller rotation typically follows the camera's rotation
     bUseControllerRotationYaw = false;  // Therefore we don't want the character to always give its back to us since its a top down game.
+   
+}
+
+void AAuraCharacter::PossessedBy(AController* NewController) 
+{
+    Super::PossessedBy(NewController);
+
+    //Server sided InitAbilityActorInfo
+    InitAbilityActorInfo();
+}
+
+
+void AAuraCharacter::OnRep_PlayerState()
+{
+    Super::OnRep_PlayerState();
+
+    //Client sided InitAbilityActorInfo
+    AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+    check(AuraPlayerState);
+    AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
+    
+}
+
+void AAuraCharacter::InitAbilityActorInfo()
+{
+    AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+    check(AuraPlayerState);
+    AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
+    
+    AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
+    AttributeSet = AuraPlayerState->GetAttributeSet();
 }
